@@ -7,7 +7,6 @@ init = (app) ->
         app.use express.bodyParser()
         path = path.normalize __dirname + '/../static'
         app.use express.static path
-        app.use express.static path + '/css'
 
         app.set 'mongo_string', 'mongodb://localhost:27017/buildpacks'
 
