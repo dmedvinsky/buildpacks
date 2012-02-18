@@ -9,7 +9,7 @@ init = (app) ->
         app.use express.static path
         app.use express.static path + '/css'
 
-        app.set 'mongo_string', 'mongodb://localhost:27017/buildpacks'
+        app.set 'mongo_string', 'mongodb://heroku:12345678@staff.mongohq.com:10077/buildpacks'
 
         app.register '.haml', require 'hamljs'
 

@@ -11,9 +11,7 @@
       path = path.normalize(__dirname + '/../static');
       app.use(express.static(path));
       app.use(express.static(path + '/css'));
-      app.set('mongo_host', 'localhost');
-      app.set('mongo_port', '27017');
-      app.set('mongo_name', 'buildpacks');
+      app.set('mongo_string', 'mongodb://heroku:12345678@staff.mongohq.com:10077/buildpacks');
       return app.register('.haml', require('hamljs'));
     });
     app.configure('development', function() {

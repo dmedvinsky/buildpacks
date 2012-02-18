@@ -1,21 +1,19 @@
 (function() {
-  var db, init, mongous, request;
+  var init, mongo, request;
 
   request = require('request');
 
-  mongous = require('mongous');
-
-  db = mongous.Mongous;
+  mongo = require('mongoskin');
 
   init = function(app) {
-    var collection, collectionName;
-    collectionName = "" + (app.set('mongo_name')) + ".repos";
-    collection = db(collectionName);
+    var collection, db;
+    db = mongo.db(app.set('mongo_string'));
+    collection = db.collection('repos');
     app.get('/', function(_, res) {
-      return collection.find(function(r) {
+      return collection.find().toArray(function(err, items) {
         return res.render('index.haml', {
           layout: false,
-          repos: r.documents
+          repos: items
         });
       });
     });

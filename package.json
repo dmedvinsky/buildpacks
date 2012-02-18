@@ -7,7 +7,7 @@
     "express": "2.5.x",
     "request": "2.9.x",
     "mongoskin": "0.3.x",
-    "hamljs": "0.6.x"
+    "hamljs": ""
   },
   "devDependencies": {},
   "optionalDependencies": {},
