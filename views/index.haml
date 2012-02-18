@@ -1,0 +1,32 @@
+!!!5
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %link{rel: 'stylesheet', type: 'text/css', href: '/css/main.css'}
+    %title Buildpacks
+  %body
+    %header.site-header
+      %h1 Heroku Buildpacks
+    %ul.repo-list
+      - each r in repos
+        %li
+          %article.repo
+            %header
+              %a{href: r.url}
+                %span.owner= r.owner
+                = " / "
+                %span.name= r.name
+            - if (r.description)
+              %p= r.description
+            - if (!r.description)
+              %p.empty No description.
+            %footer
+              - if (r.homepage)
+                %span.homepage
+                  %a{href: r.homepage} Homepage
+                %br
+              %span.created_at= "Created at: " + r.created_at
+              %br
+              %span.pushed_at= "Last updated at: " + r.pushed_at
+    %a{href: "http://github.com/dmedvinsky/buildpacks"}
+      %img{style: "position: absolute; top: 0; right: 0; border: 0;", src: "https://a248.e.akamai.net/assets.github.com/img/4c7dc970b89fd04b81c8e221ba88ff99a06c6b61/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67", alt: "Fork me on GitHub"}
