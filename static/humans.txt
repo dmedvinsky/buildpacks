@@ -1,0 +1,17 @@
+/* TEAM */
+Developer: Dmitry Medvinsky
+E-mail: dmedvinsky@gmail.com
+Twitter: @dmedvinsky
+
+
+/* THANKS */
+Andy Fitzsimon: for the favicon: http://www.iconfinder.com/icondetails/48016/16/build_control_preferences_settings_tools_icon
+Github
+Heroku
+
+
+/* SITE */
+Last update: 2012-02-18
+Standards: HTML5, CSS3
+Components: Node.JS, Mongo DB
+Software: GNU/Linux, vim, git, ssh, tmux
