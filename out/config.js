@@ -10,7 +10,6 @@
       app.use(express.bodyParser());
       path = path.normalize(__dirname + '/../static');
       app.use(express.static(path));
-      app.use(express.static(path + '/css'));
       app.set('mongo_string', 'mongodb://heroku:12345678@staff.mongohq.com:10077/buildpacks');
       return app.register('.haml', require('hamljs'));
     });
