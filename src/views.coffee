@@ -1,16 +1,15 @@
 request = require 'request'
-mongous = require 'mongous'
-db = mongous.Mongous
+mongo = require 'mongoskin'
 
 
 init = (app) ->
-    collectionName = "#{app.set 'mongo_name'}.repos"
-    collection = db collectionName
+    db = mongo.db app.set 'mongo_string'
+    collection = db.collection 'repos'
 
     app.get '/', (_, res) ->
-        collection.find (r) ->
+        collection.find().toArray (err, items) ->
             # res.send r.documents
-            res.render 'index.haml', {layout: false, repos: r.documents}
+            res.render 'index.haml', {layout: false, repos: items}
 
     app.get '/ping', (_, res) ->
         res.send 'pong\n'
